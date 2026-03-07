@@ -22,9 +22,11 @@ COPY requirements_docker.txt .
 # Upgrade pip to properly handle modern dependency resolution
 RUN pip install --no-cache-dir --upgrade pip
 
-# Install dependencies using standard pip for maximum stability with PyTorch CPU wheels
-RUN pip install --no-cache-dir -r requirements_docker.txt \
-    --extra-index-url https://download.pytorch.org/whl/cpu
+# 1. Install PyTorch CPU FIRST and completely separately to avoid crashing Render's 512MB RAM limit!
+RUN pip install --no-cache-dir torch==2.3.1+cpu torchvision==0.18.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+
+# 2. Install the rest of the standard dependencies
+RUN pip install --no-cache-dir -r requirements_docker.txt
 
 # Install Detectron2
 RUN pip install --no-cache-dir 'git+https://github.com/facebookresearch/detectron2.git'
