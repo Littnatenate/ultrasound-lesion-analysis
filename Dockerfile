@@ -19,12 +19,12 @@ RUN pip install --no-cache-dir uv
 # Copy the requirements file first to cache the dependency installation layer
 COPY requirements_docker.txt .
 
-# Install dependencies using uv. We force the CPU version of PyTorch for standard web hosting.
-RUN uv pip install --system --no-cache -r requirements_docker.txt \
+# Install dependencies using standard pip for maximum stability with PyTorch CPU wheels
+RUN pip install --no-cache-dir -r requirements_docker.txt \
     --extra-index-url https://download.pytorch.org/whl/cpu
 
-# Install Detectron2 (Linux wheel build compatible with PyTorch 2.3 CPU)
-RUN uv pip install --system --no-cache 'git+https://github.com/facebookresearch/detectron2.git'
+# Install Detectron2
+RUN pip install --no-cache-dir 'git+https://github.com/facebookresearch/detectron2.git'
 
 # Copy the entire project into the container
 COPY . .
