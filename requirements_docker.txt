@@ -3,8 +3,8 @@ python-multipart==0.0.22
 uvicorn[standard]>=0.41.0
 numpy==1.26.4
 opencv-python-headless==4.13.0.92
-torch==2.3.1
-torchvision==0.18.1
+torch==2.3.1+cpu
+torchvision==0.18.1+cpu
 fpdf2==2.8.7
 python-dotenv==1.2.2
 yacs==0.1.8
