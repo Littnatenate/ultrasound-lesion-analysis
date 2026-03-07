@@ -23,8 +23,6 @@ npm-debug.log
 # Datasets and Outputs (Do not commit large data!)
 Dataset/
 output/
-projects/
-configs/
 test/
 *.pt
 *.pth
