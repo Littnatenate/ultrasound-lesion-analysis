@@ -1,3 +1,12 @@
+---
+title: Ultrasound Backend
+emoji: 🏥
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 8000
+---
+
 # Ultrasound Lesion Analysis: A Deep Learning Approach for Automated Breast Cancer Risk Assessment
 
 ## Abstract
