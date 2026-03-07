@@ -28,8 +28,8 @@ RUN pip install --no-cache-dir torch==2.3.1+cpu torchvision==0.18.1+cpu --extra-
 # 2. Install the rest of the standard dependencies
 RUN pip install --no-cache-dir -r requirements_docker.txt
 
-# Install Detectron2
-RUN pip install --no-cache-dir 'git+https://github.com/facebookresearch/detectron2.git'
+# Install Detectron2 (Requires --no-build-isolation so it can see the torch we just installed)
+RUN pip install --no-cache-dir --no-build-isolation 'git+https://github.com/facebookresearch/detectron2.git'
 
 # Copy the entire project into the container
 COPY . .
