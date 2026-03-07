@@ -1,11 +1,11 @@
-# Use Python 3.10 slim as the base image
-FROM python:3.10-slim
+# Use Python 3.10 bullseye as the base image (more stable apt repositories)
+FROM python:3.10-bullseye
 
 # Set working directory
 WORKDIR /app
 
 # Install system dependencies required for OpenCV, PyTorch, and compiling Detectron2
-RUN apt-get update && apt-get install -y \
+RUN apt-get clean && apt-get update --fix-missing && apt-get install -y --no-install-recommends \
     libgl1-mesa-glx \
     libglib2.0-0 \
     build-essential \
