@@ -19,6 +19,9 @@ RUN pip install --no-cache-dir uv
 # Copy the requirements file first to cache the dependency installation layer
 COPY requirements_docker.txt .
 
+# Upgrade pip to properly handle modern dependency resolution
+RUN pip install --no-cache-dir --upgrade pip
+
 # Install dependencies using standard pip for maximum stability with PyTorch CPU wheels
 RUN pip install --no-cache-dir -r requirements_docker.txt \
     --extra-index-url https://download.pytorch.org/whl/cpu
