@@ -4,6 +4,16 @@ Wraps the Detectron2 analyzer, heatmap generator, and report exporters.
 """
 import os
 import sys
+from pathlib import Path
+
+# IMPORTANT: Force Python to recognize the current directory (web/backend) as an importable module
+# This ensures Docker deployments can find `analyzer.py` and `heatmap.py` regardless of the CWD.
+CURRENT_DIR = Path(__file__).parent.resolve()
+if str(CURRENT_DIR) not in sys.path:
+    sys.path.insert(0, str(CURRENT_DIR))
+
+# Import core modules
+# NOTE: These are imported locally inside lifespan to avoid model loading blocking startup
 import io
 import csv
 import base64
