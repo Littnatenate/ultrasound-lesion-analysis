@@ -47,10 +47,10 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Ultrasound Lesion Analysis API", lifespan=lifespan)
 
-# Allow React dev server (localhost:5173) to call this API
+# Allow all origins so the public Vercel frontend can call this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:8000"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
