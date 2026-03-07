@@ -73,6 +73,22 @@ class Analyzer:
             "MODEL_WEIGHTS",
             os.path.join(PROJECT_ROOT, "output", "2000_iterations.pth")
         )
+        
+        # --- Handle Cloud Deployments Missing the 445MB Weights File ---
+        if not os.path.exists(model_weights):
+            model_url = os.environ.get("MODEL_WEIGHTS_URL")
+            if model_url:
+                print(f"Model weights not found locally. Downloading from {model_url}...")
+                os.makedirs(os.path.dirname(model_weights), exist_ok=True)
+                import urllib.request
+                try:
+                    urllib.request.urlretrieve(model_url, model_weights)
+                    print("Download complete!")
+                except Exception as e:
+                    print(f"Failed to download weights: {e}")
+            else:
+                print(f"WARNING: Weights file {model_weights} not found, and MODEL_WEIGHTS_URL is not set!")
+
         self.cfg.MODEL.WEIGHTS = model_weights
         self.cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.7
         
