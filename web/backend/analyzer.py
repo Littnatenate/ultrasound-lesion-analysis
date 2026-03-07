@@ -9,6 +9,7 @@ import json
 import sys
 import torch
 from dotenv import load_dotenv
+from pathlib import Path
 
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
@@ -16,6 +17,11 @@ load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 PROJECT_ROOT = os.environ.get("PROJECT_ROOT", r"C:\Users\524yu\Dev\BREAST-CANCER-ANALYSIS")
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
+
+# MUST be added before PointRend import so Python can find the `projects` folder located at the root
+PROJECT_ROOT = Path(__file__).parent.parent.parent.resolve()
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import detectron2
 from detectron2.config import get_cfg
