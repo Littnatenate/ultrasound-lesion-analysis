@@ -100,23 +100,17 @@ export default function AnalysisResult({
 
                 {/* Export Buttons */}
                 <div className="export-bar">
-                    {settings.showPng && (
-                        <button className="btn btn-success" onClick={() => onExport('png')}>
-                            📸 Save PNG
-                        </button>
-                    )}
-                    {settings.showPdf && (
-                        <button className="btn btn-primary" onClick={() => onExport('pdf')}>
-                            📄 Save PDF
-                        </button>
-                    )}
-                    {settings.showCsv && (
-                        <button className="btn btn-outline" onClick={() => onExport('csv')}>
-                            📊 Save CSV
-                        </button>
-                    )}
+                    <button className="btn btn-success" onClick={() => onExport('png')} title="Download a standalone image of the ultrasound scan with the AI bounding boxes.">
+                        📸 Save PNG
+                    </button>
+                    <button className="btn btn-primary" onClick={() => onExport('pdf')} title="Generate a professional multi-page clinical report containing the image, measurements, and risk assessment.">
+                        📄 Save PDF
+                    </button>
+                    <button className="btn btn-outline" onClick={() => onExport('csv')} title="Download a spreadsheet containing the raw numerical measurements for tracking analysis over time.">
+                        📊 Save CSV
+                    </button>
                     {heatmapEnabled && (
-                        <button className="btn btn-warm" onClick={onToggleHeatmap}>
+                        <button className="btn btn-warm" onClick={onToggleHeatmap} title="Toggle a color-coded thermal map highlighting the specific regions the AI focused on.">
                             🔥 {showHeatmap ? 'Hide' : 'Show'} Heatmap
                         </button>
                     )}

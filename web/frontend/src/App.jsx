@@ -22,10 +22,7 @@ function App() {
 
   // Settings
   const [settings, setSettings] = useState({
-    showHeatmap: true,
-    showPng: true,
-    showPdf: true,
-    showCsv: true,
+    showHeatmap: false,
   })
 
   // ── Splash screen: poll /health until model is ready ───────────

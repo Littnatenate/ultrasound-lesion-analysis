@@ -14,22 +14,33 @@ export default function AboutPanel() {
         <div className="about-layout fade-in">
             <div className="about-header">
                 <div className="app-logo-icon" style={{ width: 64, height: 64, fontSize: 32, margin: '0 auto 16px', borderRadius: 16 }}>
-                    🔬
+                    🏥
                 </div>
-                <h2>Ultrasound Lesion Analysis</h2>
-                <p>AI-powered clinical decision support for ultrasound diagnostics</p>
+                <h2>MammoDetectAI</h2>
+                <p>Empowering Patients with Instant Clarity</p>
             </div>
 
             <div className="card card-accent card-glass" style={{ marginBottom: 16 }}>
                 <div className="card-body">
-                    <h3 style={{ marginBottom: 12 }}>About This Project</h3>
-                    <p style={{ fontSize: '0.85rem', lineHeight: 1.7 }}>
-                        This application uses a Detectron2 instance segmentation model with PointRend
-                        refinement to detect and analyze breast lesions in ultrasound images. The model
-                        was trained on annotated clinical ultrasound data and provides automated
-                        measurements, boundary analysis, and risk assessment to support clinical
-                        decision-making.
+                    <h3 style={{ marginBottom: 12 }}>Our Mission</h3>
+                    <p style={{ fontSize: '0.9rem', lineHeight: 1.7, marginBottom: 16 }}>
+                        Waiting for medical results can be one of the most stressful experiences a person can endure. At <strong>MammoDetectAI</strong>, our mission is to dramatically reduce the crushing anxiety and painful waiting times associated with breast cancer screenings.
                     </p>
+                    <p style={{ fontSize: '0.9rem', lineHeight: 1.7 }}>
+                        By leveraging state-of-the-art Artificial Intelligence, we aim to provide patients with instantaneous, easy-to-understand insights about their ultrasound scans. Whether you are tracking progressive changes during annual checkups or seeking immediate second-reader confidence, this tool is designed to save you time and bring you peace of mind.
+                    </p>
+                </div>
+            </div>
+
+            <div className="card card-glass" style={{ marginBottom: 16 }}>
+                <div className="card-body">
+                    <h3 style={{ marginBottom: 12 }}>Download Desktop App</h3>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 16 }}>
+                        Want to run our advanced AI models directly on your hospital computer with built-in patient registry tracking? Download our native Windows software.
+                    </p>
+                    <button className="btn btn-primary" style={{ width: '100%', padding: '12px' }} onClick={() => alert("The Desktop executable (.exe) is still compiling. Please check our GitHub repository for the latest release!")}>
+                        <span style={{ marginRight: 8 }}>⬇️</span> Download MammoDetectAI (.exe)
+                    </button>
                 </div>
             </div>
 
