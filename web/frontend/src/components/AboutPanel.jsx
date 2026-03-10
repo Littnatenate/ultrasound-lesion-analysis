@@ -13,8 +13,8 @@ export default function AboutPanel() {
     return (
         <div className="about-layout fade-in">
             <div className="about-header">
-                <div className="app-logo-icon" style={{ width: 64, height: 64, fontSize: 32, margin: '0 auto 16px', borderRadius: 16 }}>
-                    🏥
+                <div className="app-logo-icon" style={{ width: 64, height: 64, margin: '0 auto 16px', borderRadius: 16, overflow: 'hidden' }}>
+                    <img src="logo-icon.png" alt="SonoClarity" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <h2>SonoClarity</h2>
                 <p>Empowering Patients with Instant Clarity</p>

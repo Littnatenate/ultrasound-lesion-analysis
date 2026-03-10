@@ -149,7 +149,9 @@ function App() {
   if (!modelReady) {
     return (
       <div className="splash-screen">
-        <div className="splash-logo">🔬</div>
+        <div className="splash-logo">
+          <img src="logo-full.png" alt="SonoClarity" style={{ width: 120, height: 120, objectFit: 'contain' }} />
+        </div>
         <div className="splash-title">SonoClarity</div>
         <div className="splash-subtitle">Initializing AI model...</div>
         <div className="splash-progress">
@@ -165,7 +167,9 @@ function App() {
       {/* Header */}
       <header className="app-header">
         <div className="app-logo">
-          <div className="app-logo-icon">🔬</div>
+          <div className="app-logo-icon">
+            <img src="logo-icon.png" alt="SonoClarity Icon" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          </div>
           <h1>SonoClarity</h1>
         </div>
       </header>

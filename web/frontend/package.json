@@ -42,7 +42,7 @@
     ],
     "win": {
       "target": "portable",
-      "icon": "electron/icon.png"
+      "icon": "electron/icon.ico"
     }
   }
 }

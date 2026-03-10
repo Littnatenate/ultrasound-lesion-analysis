@@ -8,7 +8,7 @@ function createWindow() {
     minWidth: 900,
     minHeight: 600,
     title: 'SonoClarity',
-    icon: path.join(__dirname, 'icon.png'),
+    icon: path.join(__dirname, 'icon.ico'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
