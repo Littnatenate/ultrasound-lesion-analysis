@@ -30,3 +30,6 @@ test/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Electron App Build
+electron-dist/
