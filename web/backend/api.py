@@ -1,5 +1,5 @@
 """
-FastAPI backend for Ultrasound Lesion Analysis.
+FastAPI backend for SonoClarity.
 Wraps the Detectron2 analyzer, heatmap generator, and report exporters.
 """
 import os
@@ -45,7 +45,7 @@ async def lifespan(app: FastAPI):
     print("🛑 Shutting down.")
 
 
-app = FastAPI(title="Ultrasound Lesion Analysis API", lifespan=lifespan)
+app = FastAPI(title="SonoClarity API", lifespan=lifespan)
 
 # Allow all origins so the public Vercel frontend can call this API
 app.add_middleware(

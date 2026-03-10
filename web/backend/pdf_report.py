@@ -1,5 +1,5 @@
 """
-Professional PDF clinical report generator for Ultrasound Lesion Analysis.
+Professional PDF clinical report generator for SonoClarity.
 Uses fpdf2 to create a formatted PDF with patient info, annotated image, 
 clinical measurements table, and recommendation.
 """
@@ -27,7 +27,7 @@ class UltrasoundReport(FPDF):
         self.set_font("Helvetica", "B", 18)
         self.set_text_color(*self.LAVENDER)
         self.set_y(12)
-        self.cell(0, 10, "Ultrasound Lesion Analysis Report", ln=True, align="C")
+        self.cell(0, 10, "SonoClarity Medical Report", ln=True, align="C")
         
         # Timestamp
         self.set_font("Helvetica", "", 9)

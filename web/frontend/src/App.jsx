@@ -150,7 +150,7 @@ function App() {
     return (
       <div className="splash-screen">
         <div className="splash-logo">🔬</div>
-        <div className="splash-title">Ultrasound Lesion Analysis</div>
+        <div className="splash-title">SonoClarity</div>
         <div className="splash-subtitle">Initializing AI model...</div>
         <div className="splash-progress">
           <div className="splash-progress-bar"></div>
@@ -166,7 +166,7 @@ function App() {
       <header className="app-header">
         <div className="app-logo">
           <div className="app-logo-icon">🔬</div>
-          <h1>Ultrasound Lesion Analysis</h1>
+          <h1>SonoClarity</h1>
         </div>
       </header>
 

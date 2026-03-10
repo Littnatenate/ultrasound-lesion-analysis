@@ -1,4 +1,5 @@
 import os
+import sys
 import math
 import cv2
 import json
@@ -12,6 +13,12 @@ from detectron2.data import DatasetCatalog, MetadataCatalog
 from detectron2.utils.visualizer import Visualizer, ColorMode
 
 import projects.PointRend.point_rend as point_rend
+
+# Resolve the project root for both normal and PyInstaller frozen modes
+if getattr(sys, 'frozen', False):
+    PROJECT_ROOT = sys._MEIPASS
+else:
+    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Analysis Weights and Thresholds
 THRESHOLD = 0.40
@@ -38,14 +45,18 @@ class Analyzer:
         self.cfg.merge_from_file(
             model_zoo.get_config_file("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml")
         )
-        # Using abs path for PointRend configs as per original script
-        self.cfg.merge_from_file(r"C:\Users\524yu\Dev\Breast-Cancer-Analysis\projects\PointRend\configs\InstanceSegmentation\pointrend_rcnn_R_50_FPN_3x_coco.yaml")
+        # PointRend config — resolved relative to project root
+        pointrend_cfg = os.path.join(
+            PROJECT_ROOT, "projects", "PointRend", "configs",
+            "InstanceSegmentation", "pointrend_rcnn_R_50_FPN_3x_coco.yaml"
+        )
+        self.cfg.merge_from_file(pointrend_cfg)
         
         self._setup_datasets()
         
         self.cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1
         self.cfg.MODEL.POINT_HEAD.NUM_CLASSES = 1
-        self.cfg.MODEL.WEIGHTS = os.path.join("output", "2000_iterations.pth")
+        self.cfg.MODEL.WEIGHTS = os.path.join(PROJECT_ROOT, "output", "2000_iterations.pth")
         self.cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.7
         
         self.predictor = DefaultPredictor(self.cfg)
@@ -109,7 +120,7 @@ class Analyzer:
         DatasetCatalog.clear()
         MetadataCatalog.clear()
         
-        train_dir = r"C:\Breast cancer project (new)\Dataset\train"
+        train_dir = os.path.join(PROJECT_ROOT, "Dataset", "train")
         DatasetCatalog.register("lumps_train", lambda: self._get_lumps_dicts(train_dir))
         MetadataCatalog.get("lumps_train").set(thing_classes=["lump"])
         self.lumps_metadata = MetadataCatalog.get("lumps_train")

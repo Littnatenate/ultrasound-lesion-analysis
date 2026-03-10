@@ -16,7 +16,7 @@ export default function AboutPanel() {
                 <div className="app-logo-icon" style={{ width: 64, height: 64, fontSize: 32, margin: '0 auto 16px', borderRadius: 16 }}>
                     🏥
                 </div>
-                <h2>MammoDetectAI</h2>
+                <h2>SonoClarity</h2>
                 <p>Empowering Patients with Instant Clarity</p>
             </div>
 
@@ -24,7 +24,7 @@ export default function AboutPanel() {
                 <div className="card-body">
                     <h3 style={{ marginBottom: 12 }}>Our Mission</h3>
                     <p style={{ fontSize: '0.9rem', lineHeight: 1.7, marginBottom: 16 }}>
-                        Waiting for medical results can be one of the most stressful experiences a person can endure. At <strong>MammoDetectAI</strong>, our mission is to dramatically reduce the crushing anxiety and painful waiting times associated with breast cancer screenings.
+                        Waiting for medical results can be one of the most stressful experiences a person can endure. At <strong>SonoClarity</strong>, our mission is to dramatically reduce the crushing anxiety and painful waiting times associated with breast cancer screenings.
                     </p>
                     <p style={{ fontSize: '0.9rem', lineHeight: 1.7 }}>
                         By leveraging state-of-the-art Artificial Intelligence, we aim to provide patients with instantaneous, easy-to-understand insights about their ultrasound scans. Whether you are tracking progressive changes during annual checkups or seeking immediate second-reader confidence, this tool is designed to save you time and bring you peace of mind.
@@ -39,7 +39,7 @@ export default function AboutPanel() {
                         Want to run our advanced AI models directly on your hospital computer with built-in patient registry tracking? Download our native Windows software.
                     </p>
                     <button className="btn btn-primary" style={{ width: '100%', padding: '12px' }} onClick={() => alert("The Desktop executable (.exe) is still compiling. Please check our GitHub repository for the latest release!")}>
-                        <span style={{ marginRight: 8 }}>⬇️</span> Download MammoDetectAI (.exe)
+                        <span style={{ marginRight: 8 }}>⬇️</span> Download SonoClarity (.exe)
                     </button>
                 </div>
             </div>
