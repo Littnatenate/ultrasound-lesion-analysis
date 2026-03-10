@@ -149,8 +149,8 @@ function App() {
   if (!modelReady) {
     return (
       <div className="splash-screen">
-        <div className="splash-logo" style={{ background: 'transparent', boxShadow: 'none' }}>
-          <img src="logo-full.png" alt="SonoClarity" style={{ width: 180, height: 180, objectFit: 'contain', mixBlendMode: 'screen' }} />
+        <div className="splash-logo" style={{ background: 'transparent', boxShadow: 'none', width: 140, height: 140 }}>
+          <img src="logo-full.png" alt="SonoClarity" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         </div>
         <div className="splash-title">SonoClarity</div>
         <div className="splash-subtitle">Initializing AI model...</div>
@@ -167,8 +167,8 @@ function App() {
       {/* Header */}
       <header className="app-header">
         <div className="app-logo">
-          <div className="app-logo-icon" style={{ background: 'transparent', boxShadow: 'none', width: 48, height: 48 }}>
-            <img src="logo-icon.png" alt="SonoClarity Icon" style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: 'screen' }} />
+          <div className="app-logo-icon" style={{ background: 'transparent', boxShadow: 'none', width: 40, height: 40 }}>
+            <img src="logo-icon.png" alt="SonoClarity Icon" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
           <h1>SonoClarity</h1>
         </div>
