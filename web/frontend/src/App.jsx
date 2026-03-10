@@ -167,7 +167,7 @@ function App() {
       {/* Header */}
       <header className="app-header">
         <div className="app-logo">
-          <div className="app-logo-icon" style={{ background: 'transparent', boxShadow: 'none', width: 52, height: 52 }}>
+          <div className="app-logo-icon" style={{ background: 'transparent', boxShadow: 'none', width: 80, height: 80 }}>
             <img src="logo-icon.png" alt="SonoClarity Icon" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
           <h1>SonoClarity</h1>
