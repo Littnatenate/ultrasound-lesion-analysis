@@ -150,7 +150,7 @@ function App() {
     return (
       <div className="splash-screen">
         <div className="splash-logo" style={{ background: 'transparent', boxShadow: 'none', width: 140, height: 140 }}>
-          <img src="logo-full.png" alt="SonoClarity" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+          <img src="sc-logo-transparent.png" alt="SonoClarity" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         </div>
         <div className="splash-title">SonoClarity</div>
         <div className="splash-subtitle">Initializing AI model...</div>
@@ -167,10 +167,10 @@ function App() {
       {/* Header */}
       <header className="app-header">
         <div className="app-logo">
-          <div className="app-logo-icon" style={{ background: 'transparent', boxShadow: 'none', width: 80, height: 80 }}>
-            <img src="logo-icon.png" alt="SonoClarity Icon" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+          <div className="app-logo-icon" style={{ background: 'transparent', boxShadow: 'none', width: 96, height: 96 }}>
+            <img src="sc-icon-transparent.png" alt="SonoClarity Icon" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
-          <h1>SonoClarity</h1>
+          <h1 style={{ fontSize: '2rem', marginLeft: '8px' }}>SonoClarity</h1>
         </div>
       </header>
 
