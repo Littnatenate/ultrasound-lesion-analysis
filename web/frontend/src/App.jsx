@@ -167,7 +167,7 @@ function App() {
       {/* Header */}
       <header className="app-header">
         <div className="app-logo">
-          <div className="app-logo-icon" style={{ background: 'transparent', boxShadow: 'none', width: 160, height: 60, marginLeft: -16, marginRight: -40, marginTop: -15 }}>
+          <div className="app-logo-icon" style={{ background: 'transparent', boxShadow: 'none', width: 160, height: 60, marginLeft: -16, marginRight: -55, marginTop: -15 }}>
             <img src="sc-icon-transparent.png" alt="SonoClarity Icon" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           </div>
           <h1 style={{ fontSize: '2rem', marginLeft: 0 }}>SonoClarity</h1>
