@@ -24,6 +24,12 @@ class UltrasoundReport(FPDF):
         self.set_fill_color(*self.LAVENDER)
         self.rect(0, 0, 210, 4, 'F')
         
+        # Logo image (left of title)
+        logo_path = os.path.join(os.path.dirname(__file__), "sc-logo.png")
+        logo_w = 18
+        if os.path.exists(logo_path):
+            self.image(logo_path, x=10, y=8, w=logo_w)
+        
         self.set_font("Helvetica", "B", 18)
         self.set_text_color(*self.LAVENDER)
         self.set_y(12)
@@ -144,13 +150,13 @@ def generate_pdf_report(vis_img, results_list, meta, output_path):
         
         if doctor_yes:
             badge_color = UltrasoundReport.ERROR_ROSE
-            badge_text = "RECOMMENDATION: CONSULT A DOCTOR"
+            badge_text = "RECOMMENDATION: SEE DOCTOR"
         elif not results_list:
             badge_color = UltrasoundReport.SAGE_GREEN
             badge_text = "NO LESIONS DETECTED"
         else:
             badge_color = UltrasoundReport.SAGE_GREEN
-            badge_text = "RECOMMENDATION: LOW RISK"
+            badge_text = "RECOMMENDATION: DON'T SEE DOCTOR"
         
         # Draw colored badge bar
         pdf.set_fill_color(*badge_color)
@@ -207,8 +213,7 @@ def generate_pdf_report(vis_img, results_list, meta, output_path):
                 rows = [
                     ("Height", f"{res['h_cm']:.2f} cm", "Width", f"{res['w_cm']:.2f} cm"),
                     ("H/W Ratio", f"{res['ratio']:.2f}", "Area", f"{res['area_cm2']:.2f} cm²"),
-                    ("Boundary", f"{circ_lbl} ({circularity:.2f})", "Risk (p)", p_val),
-                    ("See Doctor", see_doc, "", ""),
+                    ("Boundary", f"{circ_lbl} ({circularity:.2f})", "Risk (p)", p_val)
                 ]
                 
                 for row in rows:
