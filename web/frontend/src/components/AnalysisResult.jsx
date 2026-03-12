@@ -39,6 +39,8 @@ export default function AnalysisResult({
                     <div>{seeDoctor ? 'YES' : 'NO'}</div>
                 </div>
 
+
+
                 {/* Clinical Statistics */}
                 <div className="card card-glass">
                     <div className="card-body">
@@ -83,14 +85,7 @@ export default function AnalysisResult({
                                             {r.circularity >= 0.8 ? 'Smooth' : r.circularity >= 0.6 ? 'Mod. irregular' : 'Irregular'} ({r.circularity.toFixed(2)})
                                         </span>
                                     </div>
-                                    <div className="stat-row">
-                                        <span className="stat-label">Risk</span>
-                                        <span className="stat-value">
-                                            <span className={`badge ${r.label === 'Yes' ? 'badge-danger' : 'badge-success'}`}>
-                                                {r.label} (p={r.prob?.toFixed(2) || 'N/A'})
-                                            </span>
-                                        </span>
-                                    </div>
+
                                     {i < results.length - 1 && <div className="divider" />}
                                 </div>
                             ))
