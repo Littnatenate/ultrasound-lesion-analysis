@@ -32,11 +32,14 @@ export default function AnalysisResult({
             </div>
 
             {/* Right: Stats Panel */}
-            <div className="result-stats-panel overflow-y-auto min-h-0">
-                {/* Back button */}
-                <button className="btn btn-outline" style={{ width: '100%' }} onClick={onBack}>
-                    ← Back to Intake
-                </button>
+            <div className="result-stats-panel" style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0 }}>
+                {/* Scrollable Content Area */}
+                <div className="flex-1 overflow-y-auto pr-1 custom-scrollbar" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                    {/* Back button */}
+                    <button className="btn btn-outline" style={{ width: '100%', flexShrink: 0 }} onClick={onBack}>
+                        ← Back to Intake
+                    </button>
+
 
                 {/* Risk Badge */}
                 <div className={`risk-badge ${seeDoctor ? 'risk-badge-danger' : 'risk-badge-safe'}`}>
@@ -52,7 +55,7 @@ export default function AnalysisResult({
                 <div className="grid grid-cols-1 md:grid-cols-2 relative z-10 pt-4" style={{ gap: '16px' }}>
                     {/* Patient Info Card */}
                     <div className="card card-glass relative flex flex-col justify-start" style={{ padding: '16px' }}>
-                        <h4 className="font-bold uppercase tracking-wider text-purple-300/80 mb-3" style={{ fontSize: '13px' }}>Patient Info</h4>
+                        <h4 className="font-bold uppercase tracking-wider text-purple-300/80 mb-3" style={{ fontSize: '15px' }}>Patient Info</h4>
                         <div className="flex justify-between items-center mb-1">
                             <span className="text-sm text-gray-400">Age</span>
                             <span className="text-md font-medium text-white">{age} yrs</span>
@@ -65,7 +68,7 @@ export default function AnalysisResult({
 
                     {/* Scan Time Card */}
                     <div className="card card-glass relative flex flex-col justify-start" style={{ padding: '16px' }}>
-                        <h4 className="font-bold uppercase tracking-wider text-blue-300/80 mb-3" style={{ fontSize: '13px' }}>Scan Analyzed</h4>
+                        <h4 className="font-bold uppercase tracking-wider text-blue-300/80 mb-3" style={{ fontSize: '15px' }}>Scan Analyzed</h4>
                         <div className="text-md font-medium text-white">
                             {timestamp ? timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'Unknown'}
                         </div>
@@ -77,7 +80,7 @@ export default function AnalysisResult({
                     {/* Lesion Details Card (Spans full width) */}
                     <div className="card card-glass relative flex flex-col justify-start overflow-hidden col-span-1 md:col-span-2" style={{ padding: '16px' }}>
                         <BorderBeam duration={10} size={400} className="opacity-40" />
-                        <h4 className="font-bold uppercase tracking-wider text-accent/90 mb-4 relative z-10" style={{ fontSize: '13px' }}>Findings</h4>
+                        <h4 className="font-bold uppercase tracking-wider text-accent/90 mb-4 relative z-10" style={{ fontSize: '15px' }}>Statistics</h4>
                         <div className="relative z-10" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                             {results.length === 0 ? (
                                 <p className="text-sm italic text-gray-400 text-center py-4">
@@ -92,22 +95,30 @@ export default function AnalysisResult({
                                                 {r.circularity >= 0.8 ? 'Smooth' : r.circularity >= 0.6 ? 'Mod. irregular' : 'Irregular'}
                                             </span>
                                         </div>
-                                        <div className="grid grid-cols-2" style={{ gap: '10px' }}>
+                                        <div className="grid grid-cols-2" style={{ gap: '8px' }}>
                                             <div>
-                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '2px' }}>Height</div>
+                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '1px' }}>Height</div>
                                                 <div className="font-medium text-white" style={{ fontSize: '14px' }}>{r.h_cm.toFixed(2)} cm</div>
                                             </div>
                                             <div>
-                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '2px' }}>Width</div>
+                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '1px' }}>Width</div>
                                                 <div className="font-medium text-white" style={{ fontSize: '14px' }}>{r.w_cm.toFixed(2)} cm</div>
                                             </div>
                                             <div>
-                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '2px' }}>Max Area</div>
+                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '1px' }}>H/W Ratio</div>
+                                                <div className="font-medium text-white" style={{ fontSize: '14px' }}>{r.ratio.toFixed(2)}</div>
+                                            </div>
+                                            <div>
+                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '1px' }}>Max Area</div>
                                                 <div className="font-medium text-white" style={{ fontSize: '14px' }}>{r.area_cm2.toFixed(2)} cm²</div>
                                             </div>
                                             <div>
-                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '2px' }}>Circularity</div>
+                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '1px' }}>Circularity</div>
                                                 <div className="font-medium text-white" style={{ fontSize: '14px' }}>{r.circularity.toFixed(2)}</div>
+                                            </div>
+                                            <div>
+                                                <div className="text-gray-500" style={{ fontSize: '11px', marginBottom: '1px' }}>Risk (p)</div>
+                                                <div className="font-medium text-purple-200" style={{ fontSize: '14px' }}>{r.prob !== null ? r.prob.toFixed(2) : 'N/A'}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -117,8 +128,10 @@ export default function AnalysisResult({
                     </div>
                 </div>
 
-                {/* Export Buttons */}
-                <div className="export-workflow mt-6 relative">
+                </div>
+
+                {/* Sticky Action Footer */}
+                <div className="export-workflow mt-4 pt-4 relative z-50 bg-[#0f111a]/50 backdrop-blur-md" style={{ borderTop: '1px solid rgba(123, 94, 167, 0.2)', flexShrink: 0 }}>
                     <AnimatePresence>
                         {showExportMenu && (
                             <>
@@ -198,6 +211,7 @@ export default function AnalysisResult({
                     </button>
                 </div>
             </div>
+
         </div>
     )
 }

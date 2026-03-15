@@ -1,0 +1,183 @@
+﻿
+> sono-clarity@1.0.0 electron:build
+> vite build && electron-builder --win
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 35 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                 [39m[1m[2m  0.46 kB[22m[1m[22m[2m Γöé gzip:  0.29 kB[22m
+[2mdist/[22m[35massets/index-tlfbR2bC.css  [39m[1m[2m 13.37 kB[22m[1m[22m[2m Γöé gzip:  3.49 kB[22m
+[2mdist/[22m[36massets/index-DA0yFekc.js   [39m[1m[2m210.56 kB[22m[1m[22m[2m Γöé gzip: 65.89 kB[22m
+[32mΓ£ô built in 1.42s[39m
+  ΓÇó electron-builder  version=26.8.1 os=10.0.26200
+  ΓÇó loaded configuration  file=package.json ("build" field)
+  ΓÇó author is missed in the package.json  appPackageFile=C:\Users\524yu\Dev\BREAST-CANCER-ANALYSIS\web\frontend\package.json
+  ΓÇó executing @electron/rebuild  electronVersion=35.7.5 arch=x64 buildFromSource=false workspaceRoot=C:\Users\524yu\Dev\BREAST-CANCER-ANALYSIS\web\frontend projectDir=./ appDir=./
+  ΓÇó installing native dependencies  arch=x64
+  ΓÇó completed installing native dependencies
+  ΓÇó packaging       platform=win32 arch=x64 electron=35.7.5 appOutDir=electron-dist\win-unpacked
+  ΓÇó searching for node modules  pm=npm searchDir=C:\Users\524yu\Dev\BREAST-CANCER-ANALYSIS\web\frontend
+node.exe : 
+(node:10156) 
+[DEP0190] 
+DeprecationWarning: 
+Passing args to a 
+child process with 
+shell option true can 
+lead to security 
+vulnerabilities, as 
+the arguments are not 
+escaped, only 
+concatenated.
+At line:1 char:1
++ & "C:\Program Files\
+nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: ((node:1015   
+ 6) [D...y concate    
+nated.:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+(Use `node 
+--trace-deprecation 
+...` to show where 
+the warning was 
+created)
+  ΓÇó updating asar integrity executable resource  executablePath=electron-dist\win-unpacked\SonoClarity.exe
+  ΓÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ΓÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=401ms
+  Γ¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\430907319.7z
+    --
+    Path = C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\430907319.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : A required privilege is not held by the client. : C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\430907319\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : A required privilege is not held by the client. : C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\430907319\darwin\10.12\lib\libssl.dylib
+    
+                    command='C:\Users\524yu\Dev\BREAST-CANCER-ANALYSIS\web\frontend\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\430907319.7z' '-oC:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\430907319'
+                    workingDir=C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign
+  ΓÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ΓÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=420ms
+  Γ¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\948723523.7z
+    --
+    Path = C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\948723523.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : A required privilege is not held by the client. : C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\948723523\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : A required privilege is not held by the client. : C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\948723523\darwin\10.12\lib\libssl.dylib
+    
+                    command='C:\Users\524yu\Dev\BREAST-CANCER-ANALYSIS\web\frontend\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\948723523.7z' '-oC:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\948723523'
+                    workingDir=C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign
+  ΓÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ΓÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=394ms
+  Γ¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\053939155.7z
+    --
+    Path = C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\053939155.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : A required privilege is not held by the client. : C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\053939155\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : A required privilege is not held by the client. : C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\053939155\darwin\10.12\lib\libssl.dylib
+    
+                    command='C:\Users\524yu\Dev\BREAST-CANCER-ANALYSIS\web\frontend\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\053939155.7z' '-oC:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\053939155'
+                    workingDir=C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign
+  ΓÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ΓÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=405ms
+  Γ¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\210687359.7z
+    --
+    Path = C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\210687359.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : A required privilege is not held by the client. : C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\210687359\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : A required privilege is not held by the client. : C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\210687359\darwin\10.12\lib\libssl.dylib
+    
+                    command='C:\Users\524yu\Dev\BREAST-CANCER-ANALYSIS\web\frontend\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\210687359.7z' '-oC:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign\210687359'
+                    workingDir=C:\Users\524yu\AppData\Local\electron-builder\Cache\winCodeSign

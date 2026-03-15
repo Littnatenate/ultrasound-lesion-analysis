@@ -108,7 +108,15 @@ function App() {
       const a = document.createElement('a')
       a.href = url
       const extensions = { png: 'png', pdf: 'pdf', csv: 'csv' }
-      a.download = `ultrasound_report.${extensions[type]}`
+      
+      // Dynamic naming: SC_[Site]_[YYYYMMDD]_[HHMM].[ext]
+      const site = analysisResult?.site || 'Scan'
+      const ts = analysisResult?.timestamp || new Date()
+      const yyyymmdd = ts.toISOString().split('T')[0].replace(/-/g, '')
+      const hhmm = ts.getHours().toString().padStart(2, '0') + ts.getMinutes().toString().padStart(2, '0')
+      const fileName = `SC_${site}_${yyyymmdd}_${hhmm}.${extensions[type]}`
+
+      a.download = fileName
       a.click()
       URL.revokeObjectURL(url)
       showToast(`${type.toUpperCase()} exported!`, 'success')
@@ -117,7 +125,7 @@ function App() {
     } finally {
       setLoading(false)
     }
-  }, [showToast])
+  }, [analysisResult, showToast])
 
   // ── Render ─────────────────────────────────────────────────────
 
